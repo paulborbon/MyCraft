@@ -1,0 +1,38 @@
+/* Theme variables: dark mode is the default, while .light-theme switches the complete palette. */
+:root{--bg:#070a0d;--panel:#10161b;--panel2:#151d23;--line:#33414b;--text:#e8eef2;--muted:#91a0aa;--accent:#70d7ff;--accent2:#b6f0ff;--warn:#ffd36b;--button:#101920;--button-text:#d8e8ef;--shadow:rgba(0,0,0,.45)}
+body.light-theme{--bg:#eef2f5;--panel:#ffffff;--panel2:#f5f7f9;--line:#b7c4cc;--text:#18242b;--muted:#5f6d76;--accent:#006b8f;--accent2:#084a60;--warn:#8a5b00;--button:#ffffff;--button-text:#203039;--shadow:rgba(27,46,57,.16)}
+
+/* Global sizing, typography, and page background. */
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}body{background:radial-gradient(circle at 70% 10%,rgba(35,65,78,.34) 0,var(--bg) 48%,var(--bg) 100%);transition:background .2s,color .2s}
+
+/* Shared application layout. */
+.app-shell{display:flex;min-height:100vh}.sidebar{width:270px;background:linear-gradient(180deg,var(--panel),var(--bg));border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:10}
+.brand-block{display:flex;gap:12px;align-items:center;margin-bottom:20px}.brand-mark{width:48px;height:48px;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent);font-weight:800;background:var(--panel2);box-shadow:0 0 16px rgba(112,215,255,.13)}.brand-name{font-size:13px;font-weight:800;letter-spacing:1.5px}.brand-sub{font-size:9px;color:var(--muted);letter-spacing:1.5px;margin-top:3px}.status{font-size:10px;color:var(--muted);letter-spacing:1px;border:1px solid var(--line);padding:8px 10px;margin-bottom:18px}.status-dot{display:inline-block;width:7px;height:7px;background:#3fbf73;border-radius:50%;margin-right:7px;box-shadow:0 0 8px rgba(63,191,115,.65)}
+
+/* Bootstrap navigation buttons: hover gets highlighted and mouse-out returns to the normal state. */
+.portfolio-nav{gap:7px}.nav-link{color:var(--muted);text-align:left;border:1px solid transparent!important;border-radius:3px!important;padding:11px 10px;font-size:11px;letter-spacing:1.1px;background:transparent;transition:all .15s ease}.nav-link:hover{color:var(--accent2);background:var(--panel2);border-color:var(--accent)!important;box-shadow:inset 3px 0 0 var(--accent),0 0 12px rgba(112,215,255,.12);transform:translateX(2px)}.nav-link.active{color:var(--accent2);background:var(--panel2);border-color:var(--accent)!important;box-shadow:inset 3px 0 0 var(--accent)}.sidebar-footer{margin-top:auto;color:var(--muted);font-size:9px;letter-spacing:1px;opacity:.7}
+
+/* Main content area and top-right theme control. */
+.main-panel{margin-left:270px;width:calc(100% - 270px);padding:28px;min-height:100vh}.topbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:0 0 12px;margin-bottom:18px}.topbar-title{color:var(--accent2);font-size:12px;letter-spacing:2px;font-weight:800}.topbar-sub{font-size:9px;color:var(--muted);letter-spacing:1px;margin-top:4px}.theme-toggle{border-radius:3px!important;font-size:10px!important;letter-spacing:1px;font-weight:800;min-width:110px}
+
+/* Bootstrap carousel frame keeps every Canva image the same display size while preserving its proportions. */
+.profile-stage{position:relative;min-height:calc(100vh - 105px);display:flex;align-items:center;justify-content:center}.image-carousel-inner{width:min(100%,1180px);height:calc(100vh - 155px);min-height:500px;max-height:760px}.carousel-item{height:100%;padding:0 55px}.carousel-image{width:100%;height:100%;object-fit:contain;object-position:center;background:var(--panel2);border:1px solid var(--line);box-shadow:0 15px 40px var(--shadow);border-radius:4px}.carousel-control-prev,.carousel-control-next{width:55px}.carousel-indicators{bottom:4px}.carousel-indicators [data-bs-target]{width:22px;height:3px;background-color:var(--accent);opacity:.55}.carousel-indicators .active{opacity:1}.carousel-control-prev-icon,.carousel-control-next-icon{filter:none}.design-note{position:absolute;right:8px;bottom:0;font-size:10px;color:var(--muted);letter-spacing:1px}
+
+/* Shared cards, code areas, skills, and notices used by the individual pages. */
+.panel-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);box-shadow:0 15px 40px var(--shadow);padding:35px;position:relative;overflow:hidden}.panel-card h2,.panel-card h3{color:var(--accent2)}.panel-card li{margin:12px 0;color:var(--text)}.skill-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.skill-grid span{border:1px solid var(--line);padding:12px;color:var(--text);background:var(--panel);font-size:12px}.notice{border-left:3px solid var(--warn);background:rgba(255,211,107,.08);padding:12px;color:var(--warn);font-size:12px;margin-top:20px}pre{background:var(--bg);border:1px solid var(--line);padding:20px;overflow:auto;color:var(--accent)}code{color:var(--accent)}.contact-box{font-size:15px}.contact-box a{color:var(--accent);text-decoration:none}.contact-box a:hover{text-decoration:underline}
+
+/* Virtual Assistant sample-image cards. */
+.va-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.va-card{border:1px solid var(--line);background:var(--panel);padding:12px}.va-card img{width:100%;height:230px;object-fit:cover;display:block;border:1px solid var(--line)}.va-card h3{margin:14px 0 6px;font-size:17px}.va-card p{margin:0;color:var(--muted);font-size:13px}
+
+/* Certifications use one consistent image frame so certificate images align neatly. */
+.cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.cert-card{min-width:0}.cert-label{font-size:12px;letter-spacing:.7px;font-weight:800;color:var(--accent2);margin:0 0 8px}.cert-image-wrap{height:420px;background:var(--panel);border:1px solid var(--line);padding:10px;display:flex;align-items:center;justify-content:center}.cert-image{width:100%;height:100%;object-fit:contain}
+
+/* Contact footer places the requested technology credits in one row with small icons. */
+.powered-by{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;margin-top:70px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.powered-item{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.powered-item i{font-size:15px;color:var(--accent)}
+
+/* Decorative scanline layer remains subtle in both themes. */
+.scanline{position:fixed;inset:0;pointer-events:none;z-index:100;background:linear-gradient(rgba(255,255,255,.012) 50%,transparent 50%);background-size:100% 4px;opacity:.2}
+
+/* Responsive rules keep the sidebar, carousel, cards, and grids usable on smaller screens. */
+@media(max-width:900px){.sidebar{width:220px}.main-panel{margin-left:220px;width:calc(100% - 220px);padding:18px}.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cert-grid,.va-grid{grid-template-columns:1fr}.carousel-item{padding:0 40px}.image-carousel-inner{height:calc(100vh - 145px)}}
+@media(max-width:600px){.app-shell{display:block}.sidebar{position:relative;width:100%;inset:auto;border-right:0;border-bottom:1px solid var(--line)}.sidebar .nav{display:grid;grid-template-columns:repeat(2,1fr)}.main-panel{margin-left:0;width:100%;padding:14px}.profile-stage{min-height:calc(100vh - 280px)}.image-carousel-inner{height:calc(100vh - 330px);min-height:350px}.carousel-item{padding:0 30px}.skill-grid{grid-template-columns:1fr}.topbar{align-items:flex-start;gap:12px}.theme-toggle{min-width:90px}}
