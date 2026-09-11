@@ -1,4 +1,4 @@
-```javascript
+
 // ============================================================
 // WEBSITE SCRIPT
 // Sound effects have been completely removed.
@@ -132,4 +132,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("page-ready");
 
 });
-```
+
